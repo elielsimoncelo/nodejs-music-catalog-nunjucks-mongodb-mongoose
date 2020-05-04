@@ -1,0 +1,23 @@
+{% extends "layout.njk" %}
+{% set active_page = "add" %}
+{% block pagina %}
+    <h2>Cadastro de Músicas</h2>
+    <div class="col-md-10">
+        <form action='/' method='POST'>
+            <div class="form-group">
+                <label for="nome">Nome da música</label>
+                <input type="text" class="form-control" name="nome" id="nome" placeholder="informe o nome da música" />
+            </div>
+            <div class="form-group">
+                <label for="artista">Nome do artista</label>
+                <input type="text" class="form-control" name="artista" id="artista" placeholder="informe o nome do artista" />
+            </div>
+            <div class="form-group">
+                <label for="estrelas">Total de estrelas</label>
+                <input type="text" class="form-control" name="estrelas" id="estrelas" placeholder="informe o total de estrelas" />
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <a href="/" class="btn btn-default">Voltar</a>
+        </form>
+    </div>
+{% endblock %}

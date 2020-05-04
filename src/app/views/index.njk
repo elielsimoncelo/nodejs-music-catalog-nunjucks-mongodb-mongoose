@@ -1,0 +1,37 @@
+{% extends "layout.njk" %}
+{% set active_page = "index" %}
+{% block pagina %}
+    <h2>Músicas da minha Playlist</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Artista</th>
+                <th>Estrelas</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for musica in musicas %}
+            <tr>
+                <td>{{musica._id}}</td>
+                <td>{{musica.nome}}</td>
+                <td>{{musica.artista}}</td>
+                <td>
+                    {% for estrela in range(0, musica.estrelas) %}
+                        <span class="fas fa-star"></span>
+                    {% endfor %}
+                </td>
+                <td>
+                    <a href="/edit/{{musica.id}}" class="btn btn-primary">Editar</a>
+                    <button class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form-{{musica.id}}').submit();">Excluir</button>
+                    <form id="logout-form-{{musica.id}}" action="/delete/{{musica.id}}" method="POST" enctype="application/x-www-form-urlencoded" style="display: none;">
+                        <input type="hidden" name="_method" value="DELETE" />
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

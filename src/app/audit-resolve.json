@@ -1,0 +1,30 @@
+{
+  "decisions": {
+    "39|jade>transformers>uglify-js": {
+      "decision": "none",
+      "madeAt": 1588549719436,
+      "reason": "package was removed",
+      "expiresAt": 1589759300988
+    },
+    "48|jade>transformers>uglify-js": {
+      "decision": "none",
+      "madeAt": 1588549719436,
+      "reason": "package was removed",
+      "expiresAt": 1589759300988
+    },
+    "568|jade>constantinople": {
+      "decision": "none",
+      "madeAt": 1588549727768,
+      "reason": "package was removed",
+      "expiresAt": 1589759300988
+    },
+    "785|jade>clean-css": {
+      "decision": "none",
+      "madeAt": 1588549733524,
+      "reason": "package was removed",
+      "expiresAt": 1589759300988
+    }
+  },
+  "rules": {},
+  "version": 1
+}

@@ -1,2 +1,5 @@
-# sample-nodejs-nunjucks-mongodb-knex-music-catalog
-Sample nodejs project using nunjucks and mongodb
+# sample-nodejs-nunjucks-mongodb-mongoose-music-catalog
+Sample nodejs project using nunjucks and mongodb (mongoose)
+---
+usuário: admin
+senha: 1234

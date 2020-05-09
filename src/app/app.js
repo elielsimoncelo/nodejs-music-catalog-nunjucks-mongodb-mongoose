@@ -7,7 +7,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const expressNunjucks = require('express-nunjucks');
-const indexRouter = require('./routes/musica');
+const session = require('express-session');
+const indexRouter = require('./routes/music');
+const userRouter = require('./routes/user');
 
 const app = express();
 
@@ -31,7 +33,25 @@ app.use(methodOverride((req, res) => {
   }
 }));
 
+app.use(session({
+  secret: 'teste-de-sessoes',
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(function(req, res, next) {
+  const loginUrl = '/user/login';
+
+  if (!req.session.username && req.originalUrl !== loginUrl) {
+    res.redirect('/user/login');
+    return;
+  }
+
+  next();
+});
+
 app.use('/', indexRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
